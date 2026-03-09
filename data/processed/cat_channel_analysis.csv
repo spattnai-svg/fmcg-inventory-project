@@ -1,0 +1,25 @@
+Category,Channel,units,revenue,margin
+Beverages,Offline,5059,663604.5,0.19
+Beverages,Omnichannel,4940,639060.89,0.19
+Beverages,Online,4973,640376.27,0.19
+Dairy,Offline,4805,617912.02,0.2
+Dairy,Omnichannel,4759,606139.23,0.19
+Dairy,Online,4965,649486.87,0.19
+Fruits,Offline,5162,664809.5,0.19
+Fruits,Omnichannel,4860,649576.36,0.19
+Fruits,Online,4982,635762.61,0.2
+Grocery,Offline,4851,628345.45,0.19
+Grocery,Omnichannel,5039,670479.07,0.19
+Grocery,Online,4737,639118.21,0.19
+Home Care,Offline,4993,637369.77,0.19
+Home Care,Omnichannel,5217,686862.63,0.19
+Home Care,Online,4961,654305.15,0.2
+Personal Care,Offline,4710,631102.65,0.2
+Personal Care,Omnichannel,4866,644459.7,0.19
+Personal Care,Online,5073,669183.71,0.19
+Snacks,Offline,5141,691405.15,0.19
+Snacks,Omnichannel,4906,650580.54,0.19
+Snacks,Online,4697,618889.52,0.19
+Vegetables,Offline,4991,642889.42,0.19
+Vegetables,Omnichannel,4905,633286.2,0.19
+Vegetables,Online,5202,673827.97,0.19

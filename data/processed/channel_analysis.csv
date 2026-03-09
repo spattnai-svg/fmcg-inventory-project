@@ -1,0 +1,4 @@
+Channel,total_units,total_revenue,total_cost,avg_margin_pct,transactions,avg_sell_price,total_margin,revenue_share_pct
+Offline,39712,5177438.45,4147729.25,0.19,13249,130.12,1029709.2,33.3
+Omnichannel,39492,5180444.62,4143826.52,0.19,13193,131.48,1036618.1,33.3
+Online,39590,5180950.32,4145046.32,0.19,13249,130.89,1035904.0,33.3

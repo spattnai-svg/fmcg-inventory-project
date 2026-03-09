@@ -1,0 +1,65 @@
+product_id,Product_Key,category,brand,annual_demand,avg_cost_price,avg_sell_price,holding_cost,order_cost,lead_time_days,avg_reorder_lvl,avg_stock_hand,avg_margin_pct,transaction_count
+P001,Beverages | Amul,Beverages,Amul,1882,103.54,129.03,25.89,400,9,49.66,267.91,0.19,629
+P002,Beverages | Britannia,Beverages,Britannia,1884,104.04,129.87,26.01,400,9,48.35,271.02,0.19,616
+P003,Beverages | HUL,Beverages,HUL,1954,102.11,128.05,25.53,400,9,49.12,279.75,0.2,641
+P004,Beverages | ITC,Beverages,ITC,1964,103.58,129.12,25.89,400,8,48.57,274.74,0.19,638
+P005,Beverages | Nestle,Beverages,Nestle,1893,103.03,128.4,25.76,400,9,50.24,273.57,0.19,643
+P006,Beverages | Parle,Beverages,Parle,1868,102.1,127.73,25.52,400,8,50.2,273.77,0.19,615
+P007,Beverages | PepsiCo,Beverages,PepsiCo,1733,104.24,130.08,26.06,400,9,47.99,279.48,0.19,589
+P008,Beverages | Tata,Beverages,Tata,1794,107.72,134.81,26.93,400,8,49.5,282.73,0.19,601
+P009,Dairy | Amul,Dairy,Amul,1964,104.75,130.38,26.19,250,9,49.43,284.94,0.19,652
+P010,Dairy | Britannia,Dairy,Britannia,1895,102.64,128.84,25.66,250,8,48.15,269.93,0.2,634
+P011,Dairy | HUL,Dairy,HUL,1746,104.27,130.28,26.07,250,9,49.16,271.1,0.19,580
+P012,Dairy | ITC,Dairy,ITC,1887,104.84,131.48,26.21,250,9,50.54,270.58,0.19,638
+P013,Dairy | Nestle,Dairy,Nestle,1897,100.79,126.39,25.2,250,9,49.66,278.85,0.19,638
+P014,Dairy | Parle,Dairy,Parle,1776,101.43,127.86,25.36,250,9,50.01,278.07,0.2,594
+P015,Dairy | PepsiCo,Dairy,PepsiCo,1648,104.19,130.0,26.05,250,8,49.01,274.64,0.19,565
+P016,Dairy | Tata,Dairy,Tata,1716,102.74,128.51,25.68,250,9,49.93,270.54,0.19,565
+P017,Fruits | Amul,Fruits,Amul,1817,107.26,134.81,26.81,200,9,48.73,271.83,0.19,605
+P018,Fruits | Britannia,Fruits,Britannia,2002,102.13,127.49,25.53,200,9,49.05,275.08,0.19,658
+P019,Fruits | HUL,Fruits,HUL,1831,106.03,131.22,26.51,200,9,50.19,273.46,0.19,613
+P020,Fruits | ITC,Fruits,ITC,1815,101.36,126.97,25.34,200,8,48.55,267.17,0.2,617
+P021,Fruits | Nestle,Fruits,Nestle,1871,104.74,130.5,26.19,200,8,49.45,266.63,0.19,643
+P022,Fruits | Parle,Fruits,Parle,1842,104.53,130.68,26.13,200,8,49.39,273.99,0.19,616
+P023,Fruits | PepsiCo,Fruits,PepsiCo,1834,105.95,132.08,26.49,200,8,48.94,269.81,0.19,628
+P024,Fruits | Tata,Fruits,Tata,1992,101.57,126.84,25.39,200,8,49.34,272.69,0.2,646
+P025,Grocery | Amul,Grocery,Amul,1824,105.08,131.39,26.27,450,9,48.66,275.42,0.19,602
+P026,Grocery | Britannia,Grocery,Britannia,1819,101.36,126.46,25.34,450,9,48.85,274.08,0.19,630
+P027,Grocery | HUL,Grocery,HUL,1761,105.07,131.46,26.27,450,9,50.46,275.78,0.19,585
+P028,Grocery | ITC,Grocery,ITC,1815,104.82,130.51,26.2,450,9,50.2,270.21,0.19,602
+P029,Grocery | Nestle,Grocery,Nestle,1878,107.05,134.51,26.76,450,9,49.94,267.6,0.2,633
+P030,Grocery | Parle,Grocery,Parle,1810,105.6,132.21,26.4,450,9,49.34,276.89,0.19,606
+P031,Grocery | PepsiCo,Grocery,PepsiCo,1859,106.95,133.1,26.74,450,9,49.24,270.9,0.19,609
+P032,Grocery | Tata,Grocery,Tata,1861,107.73,136.0,26.93,450,9,50.4,283.37,0.2,618
+P033,Home Care | Amul,Home Care,Amul,1846,104.2,131.67,26.05,500,8,48.88,286.37,0.2,632
+P034,Home Care | Britannia,Home Care,Britannia,1824,104.43,128.97,26.11,500,9,49.16,272.3,0.19,615
+P035,Home Care | HUL,Home Care,HUL,1911,105.53,131.27,26.38,500,8,48.82,282.31,0.19,631
+P036,Home Care | ITC,Home Care,ITC,1949,105.51,132.3,26.38,500,8,49.32,267.45,0.19,639
+P037,Home Care | Nestle,Home Care,Nestle,1988,103.99,130.19,26.0,500,8,49.36,274.51,0.19,668
+P038,Home Care | Parle,Home Care,Parle,1847,106.0,133.64,26.5,500,9,50.15,274.98,0.2,615
+P039,Home Care | PepsiCo,Home Care,PepsiCo,1900,104.4,129.66,26.1,500,9,49.3,279.08,0.19,647
+P040,Home Care | Tata,Home Care,Tata,1906,101.21,127.0,25.3,500,8,49.56,274.0,0.19,632
+P041,Personal Care | Amul,Personal Care,Amul,1776,106.13,132.61,26.53,500,8,49.65,272.01,0.19,597
+P042,Personal Care | Britannia,Personal Care,Britannia,1774,109.08,135.66,27.27,500,8,49.72,265.19,0.19,582
+P043,Personal Care | HUL,Personal Care,HUL,1903,103.73,130.13,25.93,500,9,47.9,284.98,0.2,649
+P044,Personal Care | ITC,Personal Care,ITC,1771,107.72,135.5,26.93,500,9,49.91,279.67,0.2,590
+P045,Personal Care | Nestle,Personal Care,Nestle,1781,108.41,136.24,27.1,500,9,49.3,273.46,0.2,591
+P046,Personal Care | Parle,Personal Care,Parle,1998,107.47,133.71,26.87,500,8,49.38,276.88,0.19,652
+P047,Personal Care | PepsiCo,Personal Care,PepsiCo,1685,103.79,130.88,25.95,500,9,50.1,280.5,0.2,570
+P048,Personal Care | Tata,Personal Care,Tata,1961,105.3,131.27,26.33,500,8,49.23,269.81,0.19,639
+P049,Snacks | Amul,Snacks,Amul,1762,102.97,129.95,25.74,350,9,50.98,265.95,0.2,605
+P050,Snacks | Britannia,Snacks,Britannia,1725,107.08,134.41,26.77,350,9,49.86,277.36,0.19,571
+P051,Snacks | HUL,Snacks,HUL,1942,106.64,133.03,26.66,350,9,49.56,269.74,0.19,642
+P052,Snacks | ITC,Snacks,ITC,2007,106.46,132.86,26.62,350,9,49.74,269.35,0.2,640
+P053,Snacks | Nestle,Snacks,Nestle,1871,109.44,136.49,27.36,350,9,49.41,271.57,0.19,634
+P054,Snacks | Parle,Snacks,Parle,1721,106.11,132.76,26.53,350,9,48.26,279.41,0.19,585
+P055,Snacks | PepsiCo,Snacks,PepsiCo,1840,105.12,130.72,26.28,350,8,49.6,275.4,0.19,626
+P056,Snacks | Tata,Snacks,Tata,1876,105.94,132.16,26.49,350,9,49.85,274.96,0.19,640
+P057,Vegetables | Amul,Vegetables,Amul,1867,105.18,131.28,26.29,200,9,48.97,260.47,0.19,639
+P058,Vegetables | Britannia,Vegetables,Britannia,1977,104.14,130.17,26.03,200,8,50.52,281.75,0.2,656
+P059,Vegetables | HUL,Vegetables,HUL,1899,104.45,130.91,26.11,200,9,48.5,267.41,0.19,634
+P060,Vegetables | ITC,Vegetables,ITC,1928,104.6,130.13,26.15,200,8,49.5,271.46,0.19,642
+P061,Vegetables | Nestle,Vegetables,Nestle,1787,105.25,130.65,26.31,200,8,48.35,268.14,0.19,594
+P062,Vegetables | Parle,Vegetables,Parle,1903,102.93,128.47,25.73,200,9,50.71,269.29,0.19,635
+P063,Vegetables | PepsiCo,Vegetables,PepsiCo,1916,103.22,129.28,25.8,200,8,48.68,269.94,0.19,646
+P064,Vegetables | Tata,Vegetables,Tata,1821,99.27,123.57,24.82,200,9,49.77,275.24,0.19,604
