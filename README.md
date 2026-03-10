@@ -1,173 +1,225 @@
-<<<<<<< HEAD
 # 📦 FMCG Inventory Cost Optimization
 
-> **EOQ + MILP-Style Constrained Optimization** for a retail FMCG supply chain  
-> Python · pandas · NumPy · SciPy · Matplotlib · Streamlit
+**BTech Information Technology — Final Year Project (2024–25)**
+
+> Economic Order Quantity (EOQ) Modelling + SLSQP Constrained Optimization on Indian FMCG Retail Data
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://shiv-fmcg-project.streamlit.app/)
 
 ---
 
-## 🎯 Project Summary
+## 🎯 Project Overview
 
-This project optimizes inventory ordering decisions for 15 FMCG products across 5 categories.
-
-**Problem:** Retailers lose money from:
-- Over-ordering → excess holding costs, tied-up capital
-- Under-ordering → stockouts, emergency purchases, lost sales
-
-**Solution:** The Economic Order Quantity (EOQ) formula finds the mathematically optimal order quantity that minimizes total annual inventory cost.
-
-**Constrained optimization** (SLSQP via SciPy) then adjusts quantities under real-world constraints: warehouse storage limits and capital budget.
-
----
-
-## 📊 Results
+This project applies **Operations Research** techniques to minimize annual inventory costs for a **64-product FMCG retail chain** operating across 8 Indian cities. Using EOQ modelling and constrained optimization, the system determines optimal order quantities, reorder points, and inventory cost trade-offs.
 
 | Metric | Value |
 |--------|-------|
-| Products analyzed | 15 |
-| Categories | 5 |
-| EOQ Total Annual Cost | ₹86,056 |
-| Constrained Opt. Cost | ₹91,616 |
-| Storage Constraint | 100 m² |
-| Solver Status | ✅ Optimal |
+| EOQ Optimal Annual Cost | ₹3,70,883 |
+| Constrained Optimal Cost | ₹4,00,109 |
+| Maximum Cost Reduction | −36.75% |
+| Products Optimised | 64 SKUs |
+| Dataset Size | 100,000 transactions |
+| Cities Covered | 8 |
+| Brands | 8 major FMCG brands |
 
 ---
 
-## 🗂️ Project Structure
+## 🌐 Live Demo
+
+👉 **[https://shiv-fmcg-project.streamlit.app/](https://shiv-fmcg-project.streamlit.app/)**
+
+Interactive analytics dashboard with 9 pages including an AI-powered analyst chatbot.
+
+---
+
+## ⚙️ Tech Stack
+
+| Category | Tools |
+|----------|-------|
+| Programming | Python |
+| Data Processing | pandas, NumPy |
+| Optimization | SciPy (SLSQP) |
+| Visualization | Matplotlib, Seaborn |
+| Dashboard | Streamlit |
+| AI Chatbot | Groq API (LLaMA 3.3-70b) |
+
+---
+
+## 📊 Dashboard Pages
+
+| Page | Description |
+|------|-------------|
+| 🏠 Overview | KPI cards, category table, cost distribution |
+| 📊 EOQ Results | EOQ formula, charts, full SKU table |
+| 💰 Cost Analysis | Ordering vs holding cost breakdown |
+| 🔄 Reorder Points | ROP formula, scatter chart, stockout risk |
+| ⚙️ Optimization | SLSQP results + live what-if calculator |
+| 📈 Sensitivity | Holding cost rate sensitivity analysis |
+| 🌆 City & Channel | Regional and channel breakdown |
+| 🖼️ All Charts | Complete set of 8 analysis charts |
+| 🤖 Ask the Analyst | AI chatbot powered by Groq LLaMA 3.3 |
+
+---
+
+## 🧠 Methodology
+
+### 1️⃣ Economic Order Quantity (EOQ)
+
+EOQ determines the optimal order size that minimizes total inventory cost.
 
 ```
-fmcg_inventory_project/
-│
-├── app.py                          ← Streamlit web dashboard
-│
+Q* = √(2 × D × S / H)
+```
+
+Where:
+- **D** = Annual demand (units)
+- **S** = Ordering cost per order (₹500)
+- **H** = Annual holding cost per unit (25% of product price)
+
+### 2️⃣ Reorder Point (ROP)
+
+```
+ROP = (Daily Demand × Lead Time) + Safety Stock
+Safety Stock = 7 days × Daily Demand
+```
+
+### 3️⃣ Constrained Optimization (SLSQP)
+
+Real-world constraints applied via SciPy SLSQP solver:
+- Total inventory ≤ 9,913 units (storage constraint)
+- Total order value ≤ ₹5,00,000 (budget constraint)
+
+---
+
+## 📈 Key Results
+
+| Result | Value |
+|--------|-------|
+| EOQ Minimum Cost | ₹3,70,883/year |
+| Constrained Cost | ₹4,00,109/year |
+| Optimization Penalty | +7.9% (+₹29,226) |
+| Max Potential Savings | −36.75% via holding rate reduction |
+| Stockout Risk | LOW for all 64 SKUs |
+| Channel Distribution | Perfectly balanced (33.3% each) |
+| City Distribution | Even across all 8 cities (±5.3%) |
+
+---
+
+## 📦 Dataset
+
+**Source:** [Retail FMCG Sales Dataset 2024](https://www.kaggle.com/datasets/arannayavadebnath/retail-fmcg-sales-dataset-2024) — Kaggle
+
+| Attribute | Value |
+|-----------|-------|
+| Rows | 100,000 |
+| Columns | 21 |
+| Time Period | 2024 |
+| Cities | Mumbai, Delhi, Bengaluru, Kolkata, Chennai, Hyderabad, Pune, Ahmedabad |
+| Brands | Amul, Britannia, HUL, ITC, Nestle, Parle, PepsiCo, Tata |
+| Channels | Online, Offline, Omnichannel |
+
+> ⚠️ The raw dataset is **not included** in this repo (20MB, exceeds GitHub limit). Download it separately — see setup instructions below.
+
+---
+
+## 📁 Project Structure
+
+```
+fmcg-inventory/
+├── app.py                        # Streamlit dashboard (9 pages + chatbot)
+├── requirements.txt              # Python dependencies
+├── README.md
+├── SETUP.txt                     # Detailed setup guide
 ├── data/
-│   ├── generate_data.py            ← Creates sample_data.csv
-│   └── sample_data.csv             ← 15-product FMCG dataset
-│
-├── scripts/
-│   ├── eoq_model.py                ← Core EOQ + optimization logic
-│   ├── visualize.py                ← Generates all chart PNGs
-│   ├── generate_report.py          ← Creates PDF report
-│   └── generate_presentation.js   ← Creates PowerPoint slides
-│
-├── notebooks/
-│   └── FMCG_Inventory_Optimization.ipynb   ← Full analysis walkthrough
-│
-├── outputs/                        ← All generated files land here
-│   ├── chart1_eoq.png
+│   ├── raw/                      # ⚠️ Add fmcg_raw.csv here (not in repo)
+│   └── processed/                # Pre-computed CSVs (included)
+│       ├── inventory_data.csv
+│       ├── eoq_results.csv
+│       ├── city_analysis.csv
+│       ├── channel_analysis.csv
+│       ├── sensitivity_holding.csv
+│       └── monthly_total.csv
+├── outputs/                      # Generated charts (included)
+│   ├── chart1_eoq_by_category.png
 │   ├── chart2_cost_breakdown.png
 │   ├── chart3_eoq_curve.png
 │   ├── chart4_rop_scatter.png
 │   ├── chart5_eoq_vs_opt.png
 │   ├── chart6_category_pie.png
-│   ├── Inventory_Optimization_Report.pdf
-│   └── Inventory_Optimization_Presentation.pptx
-│
-├── requirements.txt
-└── README.md
+│   ├── chart7_demand_vs_eoq.png
+│   └── chart8_top15_cost.png
+└── scripts/                      # Analysis pipeline
+    ├── clean_data.py
+    ├── eoq_model.py
+    ├── visualize.py
+    └── extended_analysis.py
 ```
 
 ---
 
-## ⚙️ EOQ Formula
+## 🚀 Running Locally
 
-$$EOQ = \sqrt{\frac{2DS}{H}}$$
-
-- **D** = Annual demand (units/year)
-- **S** = Ordering cost per order (₹)
-- **H** = Holding cost per unit per year (₹)
-
-**Total Annual Cost:**  `TC = (D/Q)×S + (Q/2)×H`
-
-**Reorder Point:**  `ROP = (D/365) × (Lead Time + Safety Stock Days)`
-
----
-
-## 🚀 How to Run (Step by Step)
-
-### Step 1 — Install Python (if not installed)
-Download from https://python.org → Install → check "Add to PATH"
-
-### Step 2 — Install dependencies
-Open Command Prompt in the project folder:
-```
-pip install pandas numpy scipy matplotlib seaborn reportlab streamlit
+### Step 1 — Clone the repo
+```bash
+git clone https://github.com/spattnai-svg/fmcg-inventory.git
+cd fmcg-inventory
 ```
 
-### Step 3 — Install Node.js (for PowerPoint)
-Download from https://nodejs.org → Install
+### Step 2 — Download the dataset ⚠️
+1. Go to: https://www.kaggle.com/datasets/arannayavadebnath/retail-fmcg-sales-dataset-2024
+2. Download and extract the ZIP
+3. Rename the CSV to `fmcg_raw.csv`
+4. Place it at `data/raw/fmcg_raw.csv`
 
-### Step 4 — Install PptxGenJS
-```
-npm install -g pptxgenjs
+### Step 3 — Set up virtual environment
+```bash
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Mac/Linux
+source venv/bin/activate
 ```
 
-### Step 5 — Generate the dataset
-```
-python data/generate_data.py
+### Step 4 — Install dependencies
+```bash
+pip install -r requirements.txt
 ```
 
-### Step 6 — Run the EOQ model
-```
+### Step 5 — Run pipeline (skip if processed CSVs already exist)
+```bash
+python scripts/clean_data.py
 python scripts/eoq_model.py
-```
-
-### Step 7 — Generate all charts
-```
 python scripts/visualize.py
+python scripts/extended_analysis.py
 ```
 
-### Step 8 — Generate PDF report
-```
-python scripts/generate_report.py
-```
-
-### Step 9 — Generate PowerPoint
-```
-node scripts/generate_presentation.js
-```
-
-### Step 10 — Launch the web app
-```
+### Step 6 — Launch dashboard
+```bash
 streamlit run app.py
 ```
-Then open http://localhost:8501 in your browser.
 
-### Step 11 — Open Jupyter Notebook
-```
-pip install jupyter
-jupyter notebook notebooks/FMCG_Inventory_Optimization.ipynb
-```
+Opens at: **http://localhost:8501**
 
 ---
 
-## 📦 Deploy Web App for Free (Streamlit Cloud)
+## 📌 Applications
 
-1. Push this project to GitHub
-2. Go to https://share.streamlit.io
-3. Connect your GitHub repo
-4. Set main file = `app.py`
-5. Click Deploy → get a free public URL!
-
----
-
-## 🛠️ Tech Stack
-
-| Tool | Purpose |
-|------|---------|
-| Python | Core language |
-| pandas | Data manipulation |
-| NumPy | Numerical computation |
-| SciPy (SLSQP) | Constrained optimization |
-| Matplotlib / Seaborn | Charts |
-| ReportLab | PDF generation |
-| PptxGenJS | PowerPoint slides |
-| Streamlit | Interactive web dashboard |
+Inventory optimization techniques used here are applicable in:
+- Retail supply chain management
+- Warehouse and storage planning
+- E-commerce fulfillment
+- Manufacturing logistics
 
 ---
 
-## 📄 License
-MIT — free to use, modify, and distribute.
-=======
-# fmcg-inventory
->>>>>>> 2e26080353230e6c2f7322f7887ab1dba746222d
+## 📜 License
+
+This project is released under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Shiv Sekhar Pattnaik**  
